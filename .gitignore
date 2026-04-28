@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Виртуальное окружение
+venv/
+env/
+.env
+
+# Большие файлы
+hf_cache/
+dataset/
+dataset_v2/
+v1_backup/
+
+# Временные файлы
+*.tmp
+*.log
+tmp/
+
+# Node.js
+node_modules/
+
+# React build
+build/
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Windows
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# MacOS
+.DS_Store
+
+# Секретные ключи
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+firebase-config.js
+serviceAccountKey.json
