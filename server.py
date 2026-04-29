@@ -29,7 +29,7 @@ def sigmoid(z: float) -> float:
 
 def load_model(path: Path) -> dict:
     if not path.exists():
-        raise FileNotFoundError(f"model.json не найден: {path}")
+        raise FileNotFoundError(f"model.json не знайдено: {path}")
 
     m = json.loads(path.read_text(encoding="utf-8"))
 
@@ -173,19 +173,19 @@ def health():
 def analyze():
     if "image" not in request.files:
         return jsonify({
-            "error": "Файл не найден в запросе (поле должно называться 'image')"
+            "error": "Файл не знайдено в запиті (поле має називатися 'image')"
         }), 400
 
     file = request.files["image"]
 
     if not file.filename:
-        return jsonify({"error": "Файл не выбран"}), 400
+        return jsonify({"error": "Файл не вибрано"}), 400
 
     ext = Path(file.filename).suffix.lower()
 
     if ext not in ALLOWED_EXTS:
         return jsonify({
-            "error": f"Неподдерживаемый формат: {ext}. Разрешено: {sorted(ALLOWED_EXTS)}"
+            "error": f"Непідтримуваний формат: {ext}. Дозволено: {sorted(ALLOWED_EXTS)}"
         }), 400
 
     tmp_path: Path | None = None
